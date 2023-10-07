@@ -6,6 +6,7 @@ import time
 import keyboard
 import random
 import win32api, win32con
+import model # this is model.py, the file of ML functions
 
 time.sleep(2)
 
@@ -22,7 +23,7 @@ cap = cv2.VideoCapture(0)
 
 # Create a VideoWriter object. This object will be used to write the recorded video to a file:
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (1920, 1080))
+#out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (1920, 1080)) to store a video I think
 
 # Start a loop to capture and write the video:
 while True:
@@ -31,7 +32,7 @@ while True:
     if not ret:
         break
 
-    out.write(frame)
+    #out.write(frame) to write the output.mp4 video
 
     cv2.imshow('Gaming Window', frame)
     # if the user press q on the keyboard, break.
@@ -40,7 +41,10 @@ while True:
         break
     elif pressed == ord('w'):
         click(600, 483)
+    elif pressed == ord('s'):
+        cards = model.scan(frame)
+        # Do something with the recognized cards
 
 # Release the VideoCapture and VideoWriter objects:
 cap.release()
-out.release()
+#out.release()
