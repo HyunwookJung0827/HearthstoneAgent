@@ -1,5 +1,21 @@
 import cv2
 import numpy as np
+from pyautogui import *
+import pyautogui
+import time
+import keyboard
+import random
+import win32api, win32con
+
+time.sleep(2)
+
+def click(x,y):
+    win32api.SetCursorPos((x,y))
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
+    time.sleep(0.1)
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
+
+click(600, 483)
 
 # Create a VideoCapture object. This object will be used to capture the video from your screen:
 cap = cv2.VideoCapture(0)
@@ -18,8 +34,12 @@ while True:
     out.write(frame)
 
     cv2.imshow('Gaming Window', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    # if the user press q on the keyboard, break.
+    pressed = cv2.waitKey(1)
+    if pressed == ord('q'):
         break
+    elif pressed == ord('w'):
+        click(600, 483)
 
 # Release the VideoCapture and VideoWriter objects:
 cap.release()
