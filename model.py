@@ -11,8 +11,9 @@ dataset = LoadImages(path="/path/to/dataset", img_size=448)
 # Create the data loader
 data_loader = DataLoader(dataset, batch_size=32)
 
-# Create the model
-model = DetectMultiBackend(weights="/path/to/pretrained/model.pt", device="cuda:0")
+# Load the pre-trained YOLOv5 model
+model = Detect(weights="/path/to/pretrained/yolov5n.pt", device="cuda:0")
+#model = DetectMultiBackend(weights="/path/to/pretrained/yolov5n.pt", device="cuda:0")
 
 # Train the model
 model.train(data_loader, epochs=10)
