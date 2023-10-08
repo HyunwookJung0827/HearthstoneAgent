@@ -7,6 +7,7 @@ import keyboard
 import random
 import win32api, win32con
 import model # this is model.py, the file of ML functions
+import torch
 
 time.sleep(2)
 
@@ -26,6 +27,10 @@ fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 #out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (1920, 1080)) to store a video I think
 
 # Start a loop to capture and write the video:
+# What if I have start boolean that represents initiative phase?
+# Look for the Confirm button to check if it is the starting phase right now
+# refer to Confirm.png in assets folder
+start = True
 while True:
     # Capture the virtual webcam
     ret, frame = cap.read()

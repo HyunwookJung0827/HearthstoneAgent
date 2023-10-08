@@ -1,21 +1,21 @@
 # This file would contain the code for the machine learning model that is used by the agent.
 
-import cv2
-import numpy as np
+import torch
+from torch.utils.data import DataLoader
+from yolov5.models.common import DetectMultiBackend
+from yolov5.utils.dataloaders import LoadImages
 
-def scan(image):
-    """Scans the given image and returns a list of the recognized cards."""
+# Load the dataset
+dataset = LoadImages(path="/path/to/dataset", img_size=448)
 
-    # Preprocess the image
-    image = cv2.resize(image, (224, 224))
-    image = np.array(image, dtype=np.float32) / 255.0
+# Create the data loader
+data_loader = DataLoader(dataset, batch_size=32)
 
-    # Make a prediction
-    prediction = predict(image)
+# Create the model
+model = DetectMultiBackend(weights="/path/to/pretrained/model.pt", device="cuda:0")
 
-    # Return the predicted card classes
-    return prediction.argmax()
+# Train the model
+model.train(data_loader, epochs=10)
 
-def predict(image):
-    """Predicts the scanned pixel's result and return the prediction"""
-    return
+# Save the model
+torch.save(model.state_dict(), "/path/to/trained/model.pt")
