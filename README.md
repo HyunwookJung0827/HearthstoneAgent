@@ -4,6 +4,9 @@ Prototype of Hearthstone AI that wins over CPU (The Innkeeper) in practice mode 
 11/01/2023 11:00
 Still having a hard time training a credible model.pt using train.py of Yolov5. I've tried a monitor screening with a model.pt I made for the first time, and it was not detecting any cards in the screen. I found that the metrics/precision stayed under 0.020 in results.png. I suspect that the precision of recognizing each card(excluding minions on the field) is very poor because I used the screenshots that has minions on the field (which of course use the same portrait) thus many false-positive cases appeared during the training. Plus I replaced any golden cards to normal cards for sustainability.
 
+![image](https://github.com/HyunwookJung0827/HearthstoneAgent/assets/90017772/41558d16-45f9-42b0-a2ac-5d34b694ba5b)
+
+
 10/21/2023 15:00
 I've been thinking of Paladin Expert instead of Mage Normal deck. There are some reasons: First, I could not make the same Mage-Normal Innkeeper's deck because there were some "Legacy" cards such as "Oasis Snapturtle" which means they are not in use in game, and a user cannot use it anymore, only NPC can. Second, after I looked up the deck for mage Expert, I noticed that the Innkeeper's deck of mage expert has some complex mechanics to calculate (i.e. "Discover a random magic"). After playing some games, I could collect all the Paladin cards I needed for the Innkeeper's deck.
 
