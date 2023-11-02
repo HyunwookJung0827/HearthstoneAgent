@@ -1,5 +1,9 @@
 # HearthstoneAgent
 Prototype of Hearthstone AI that wins over CPU (The Innkeeper) in practice mode (Normal/Expert)
+https://progress-bar.dev/30
+
+
+
 11/02/2023 14:00
 Finally, I got a remarkable trained model. Somehow local training doesn't pick up the models higher than Yolov5s.pt (or .yaml) making the precision score at absolute zero. And using yolov5s.yaml only gave me about 15% successful detection. After some experiments on batch size and epoch numbers, I felt like it would be very challenging to train without a more complex model, so I decided to implement the train into Google Colab and it worked (97.7% successful card detection rate). 
 ![image](https://github.com/HyunwookJung0827/HearthstoneAgent/assets/90017772/4489d3f8-bf74-4581-9985-a1b65285b06d)
