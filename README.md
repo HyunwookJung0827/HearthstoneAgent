@@ -1,7 +1,7 @@
 # HearthstoneAgent
 Prototype of Hearthstone AI that wins over CPU (The Innkeeper) in practice mode (Normal/Expert)
 
-Schedule: Card detection - Status Analyzation - Command - Notable Win Rate vs Expert CPU
+Task: Card detection -|Here|- Status Analyzation - Command - Notable Win Rate vs Expert CPU
 
 ![](https://geps.dev/progress/30)
 
