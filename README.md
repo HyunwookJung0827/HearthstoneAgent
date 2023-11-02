@@ -1,6 +1,6 @@
 # HearthstoneAgent
-Prototype of Hearthstone AI that wins over CPU (The Innkeeper) in practice mode (Normal/Expert)
-https://progress-bar.dev/30
+Prototype of Hearthstone AI that wins over CPU (The Innkeeper) in practice mode (Normal/Expert)[
+https://progress-bar.dev/30](https://progress-bar.dev/30/)
 
 
 
